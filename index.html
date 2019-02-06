@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- Bootstrap with all required dependencies-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+            width: 30px;
+            height: 30px;
+            font-weight: normal;
+        }
+        .circle_red{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: red;
+            line-height: 65px;
+            text-align: center;
+        }
+
+        .circle_blue{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: blue;
+            line-height: 65px;
+            text-align: center;
+        }
+
+        .available{
+            height: 30px;
+            width: 30px;
+            background: burlywood;
+        }
+
+        .board{
+            width: 500px;
+            height: 500px;
+            border: 5in; 
+            border-color: black
+        }
+
+        .prompt{
+            height: 30px;
+            width: 30px;
+            background: rgb(4, 4, 66);
+        }
+
+        .menuWidgrt{
+            width: 100px;
+            height: 30px;
+            margin: 5px;
+        }
+
+        .row [class*="col-"]{
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+        }
+
+        .row{
+         overflow: hidden; 
+        }
+
+
+
+    </style>
+    <body>
+
+        <script src="game.js"></script>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 well">
+                        <input type="text" id="bord_size_text" value="10" class="menuWidgrt">
+                        <button onclick="CreateBoardAndInitGame()" class="menuWidgrt btn btn-success">Rozpocznij</button>
+                        <br>
+                        <select class="form-control menuWidgrt" id="aiLevel">
+                            <option>Latwy</option> 
+                            <option>Sredni</option> 
+                            <option>Trudny</option> 
+                        </select>
+                        <br>
+                        Gracz (niebieski) <p id="player1_score">2</p> Komputer (czerwony) <p id="player2_score">2</p>
+                        <br>
+                        info <p id="info">2</p>
+                </div>
+                <div class="col-sm-8">
+                    
+                    <div id="game_board"></div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
